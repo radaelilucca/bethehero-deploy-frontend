@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { FiArrowLeft } from 'react-icons/fi';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
+import { FiArrowLeft } from "react-icons/fi";
 
 import {
   Container,
@@ -11,17 +11,17 @@ import {
   Input,
   TextArea,
   Button,
-} from './styles';
+} from "./styles";
 
-import api from '../../services/api';
-import logo from '../../assets/logo.svg';
+import api from "../../services/api";
+import logo from "../../assets/logo.svg";
 
 export default function NewIncident() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [amount, setAmount] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [amount, setAmount] = useState("");
 
-  const ongId = localStorage.getItem('id');
+  const ongId = localStorage.getItem("id");
 
   const history = useHistory();
 
@@ -40,28 +40,28 @@ export default function NewIncident() {
         },
       });
 
-      setTitle('');
-      setDescription('');
-      setAmount('');
+      setTitle("");
+      setDescription("");
+      setAmount("");
 
       await Swal.fire({
-        title: 'Sucesso 👍',
-        text: 'Caso cadastrado na base de dados!',
-        icon: 'success',
-        confirmButtonColor: '#e02041',
-        confirmButtonText: 'Ok!',
+        title: "Sucesso 👍",
+        text: "Caso cadastrado na base de dados!",
+        icon: "success",
+        confirmButtonColor: "#e02041",
+        confirmButtonText: "Ok!",
       }).then(async (result) => {
         if (result.value) {
-          history.push('/');
+          history.push("/");
         }
       });
     } catch (error) {
       Swal.fire({
-        title: 'Que pena 😢',
-        text: 'Não foi possível cadastrar o caso. Tente novamente. ',
-        icon: 'error',
-        confirmButtonColor: '#e02041',
-        confirmButtonText: 'Okay',
+        title: "Que pena 😢",
+        text: "Não foi possível cadastrar o caso. Tente novamente. ",
+        icon: "error",
+        confirmButtonColor: "#e02041",
+        confirmButtonText: "Okay",
       });
     }
   }
@@ -101,7 +101,7 @@ export default function NewIncident() {
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
             required
-            minLength={3}
+            minLength={1}
           />
 
           <Button type="submit">Cadastrar</Button>
