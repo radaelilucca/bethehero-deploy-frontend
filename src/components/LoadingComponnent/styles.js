@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ export const AnimationLoading = styled.div`
   height: 100px;
 `;
 
-export const LoadingText = styled.text`
+export const LoadingText = styled.div`
   margin-top: 88px;
   margin-bottom: 30px;
   font-size: 38px;

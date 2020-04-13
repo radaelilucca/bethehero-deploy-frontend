@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
-import { useHistory } from 'react-router-dom';
-import { FiTrash2, FiEdit } from 'react-icons/fi';
+import React from "react";
+import { useHistory } from "react-router-dom";
+import { FiTrash2, FiEdit } from "react-icons/fi";
 
 import {
   Container,
@@ -9,7 +9,7 @@ import {
   PropertyValue,
   EditButton,
   DeleteButton,
-} from './styles';
+} from "./styles";
 
 export default function IncidentCard({ incident, handleDeleteIncident }) {
   const history = useHistory();
@@ -23,9 +23,9 @@ export default function IncidentCard({ incident, handleDeleteIncident }) {
         <PropertyValue>{incident.description}</PropertyValue>
         <CaseProperty>VALOR:</CaseProperty>
         <PropertyValue>
-          {Intl.NumberFormat('pt-BR', {
-            style: 'currency',
-            currency: 'BRL',
+          {Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL",
           }).format(incident.amount)}
         </PropertyValue>
 

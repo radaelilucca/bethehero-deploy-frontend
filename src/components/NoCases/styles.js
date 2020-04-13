@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -23,13 +23,13 @@ export const NotFoundContainer = styled.div`
   border-radius: 20px;
   width: 350px;
 `;
-export const NotFound = styled.text`
+export const NotFound = styled.p`
   font-size: 180px;
   line-height: 200px;
   font-weight: bold;
   color: #eee;
 `;
-export const Title = styled.text`
+export const Title = styled.strong`
   font-size: 50px;
   line-height: 80px;
   font-weight: bold;
@@ -37,7 +37,7 @@ export const Title = styled.text`
   text-align: center;
   margin-top: 40px;
 `;
-export const Description = styled.text`
+export const Description = styled.p`
   font-size: 40px;
   line-height: 80px;
   font-weight: 500;

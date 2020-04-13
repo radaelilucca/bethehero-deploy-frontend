@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   li {
@@ -9,7 +9,7 @@ export const Container = styled.div`
   }
 `;
 
-export const CaseProperty = styled.text`
+export const CaseProperty = styled.p`
   display: block;
   margin-bottom: 8px;
   margin-top: 10px;
@@ -18,7 +18,7 @@ export const CaseProperty = styled.text`
   font-size: 18px;
 `;
 
-export const PropertyValue = styled.text`
+export const PropertyValue = styled.span`
   color: #737380;
   line-height: 38px;
   font-size: 16px;

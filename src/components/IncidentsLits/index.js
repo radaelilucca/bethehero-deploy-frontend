@@ -1,20 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { FiSkipBack, FiSkipForward } from 'react-icons/fi';
+import React, { useState, useEffect } from "react";
+import { FiSkipBack, FiSkipForward } from "react-icons/fi";
 
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
 
 import {
   Container,
   IncidentsContainer,
   PageController,
   Button,
-} from './styles';
+} from "./styles";
 
-import NoCases from '../NoCases';
-import LoadingComponnent from '../LoadingComponnent';
-import IncidentCard from '../IncidentCard';
+import NoCases from "../NoCases";
+import LoadingComponnent from "../LoadingComponnent";
+import IncidentCard from "../IncidentCard";
 
-import api from '../../services/api';
+import api from "../../services/api";
 
 export default function IncidentsList() {
   const [incidents, setIncidents] = useState([]);
@@ -22,11 +22,11 @@ export default function IncidentsList() {
   const [totalPage, setTotalPage] = useState();
   const [loading, setLoading] = useState(false);
 
-  const ongId = localStorage.getItem('id');
+  const ongId = localStorage.getItem("id");
 
   async function loadIncidents() {
     setLoading(true);
-    const response = await api.get('/profile', {
+    const response = await api.get("/profile", {
       params: { page },
       headers: {
         auth: ongId,
@@ -46,15 +46,15 @@ export default function IncidentsList() {
 
   async function handleDeleteIncident(id, title) {
     await Swal.fire({
-      title: 'Deletar Caso',
+      title: "Deletar Caso",
       text: `Você tem certeza que quer deletar o caso ${title}`,
-      icon: 'warning',
+      icon: "warning",
       showCancelButton: true,
-      cancelButtonColor: '#e02041',
-      confirmButtonColor: '#444',
+      cancelButtonColor: "#e02041",
+      confirmButtonColor: "#444",
       reverseButtons: true,
-      confirmButtonText: 'Sim',
-      cancelButtonText: 'Cancelar',
+      confirmButtonText: "Sim",
+      cancelButtonText: "Cancelar",
     }).then(async (result) => {
       if (result.value) {
         try {
@@ -65,16 +65,15 @@ export default function IncidentsList() {
           });
 
           Swal.fire({
-            title: 'Sucesso',
+            title: "Sucesso",
             text: `Caso ${title} deletado com sucesso.`,
-            icon: 'success',
-            confirmButtonColor: '#e02041',
-            confirmButtonText: 'Okay',
+            icon: "success",
+            confirmButtonColor: "#e02041",
+            confirmButtonText: "Okay",
             // eslint-disable-next-line no-shadow
           }).then(async (result) => {
             if (result.value) {
-              loadIncidents();
-              if (totalPage !== page) {
+              if (totalPage === page) {
                 if (page !== 1) {
                   setPage(page - 1);
                 }
@@ -84,11 +83,11 @@ export default function IncidentsList() {
         } catch (error) {
           // trocar por sweet alert
           Swal.fire({
-            title: 'Que pena.',
+            title: "Que pena.",
             text: `Caso: ${title} não pode ser deletado. Tente novamente.`,
-            icon: 'error',
-            confirmButtonColor: '#e02041',
-            confirmButtonText: 'Okay',
+            icon: "error",
+            confirmButtonColor: "#e02041",
+            confirmButtonText: "Okay",
           });
         }
       }
@@ -112,6 +111,7 @@ export default function IncidentsList() {
                     incident={incident}
                     loadIncidents={loadIncidents}
                     handleDeleteIncident={handleDeleteIncident}
+                    key={incident.id}
                   />
                 ))}
               </ul>
