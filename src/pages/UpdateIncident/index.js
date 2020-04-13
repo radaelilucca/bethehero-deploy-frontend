@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link, useHistory, useParams } from 'react-router-dom';
-import { FiArrowLeft } from 'react-icons/fi';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { useState } from "react";
+import { Link, useHistory, useParams } from "react-router-dom";
+import { FiArrowLeft } from "react-icons/fi";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import {
   Container,
@@ -12,20 +12,20 @@ import {
   Input,
   TextArea,
   Button,
-} from './styles';
+} from "./styles";
 
-import logo from '../../assets/logo.svg';
+import logo from "./logo2.svg";
 
-import api from '../../services/api';
+import api from "../../services/api";
 
 export default function UpdateIncident() {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
   const [amount, setAmount] = useState();
 
   const history = useHistory();
 
-  const ongId = localStorage.getItem('id');
+  const ongId = localStorage.getItem("id");
 
   const { id } = useParams();
 
@@ -42,12 +42,12 @@ export default function UpdateIncident() {
           },
         }
       );
-      toast.success('Caso Atualizado com Sucesso! 👍');
+      toast.success("Caso Atualizado com Sucesso! 👍");
       setTimeout(() => {
-        history.push('/');
+        history.push("/");
       }, 2500);
     } catch (err) {
-      toast.error('Falha ao atualizar o caso. Tente novamente. 😢');
+      toast.error("Falha ao atualizar o caso. Tente novamente. 😢");
     }
   }
 
