@@ -75,8 +75,12 @@ export const Form = styled.form`
 
   @media (max-width: 1024px) {
     a {
-      font-size: 38px;
-      margin-top: 70px;
+      font-size: 26px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 28px;
     }
   }
 

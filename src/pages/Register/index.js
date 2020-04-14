@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Swal from 'sweetalert2';
-import { FiArrowLeft } from 'react-icons/fi';
-import PhoneInput, { formatPhoneNumberIntl } from 'react-phone-number-input';
+import React, { useState } from "react";
+import { Link, useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
+import { FiArrowLeft } from "react-icons/fi";
+import PhoneInput, { formatPhoneNumberIntl } from "react-phone-number-input";
 
 import {
   Container,
@@ -13,19 +13,19 @@ import {
   Select,
   InputGroup,
   Button,
-} from './styles';
+} from "./styles";
 
-import api from '../../services/api';
-import logo from '../../assets/logo.svg';
+import api from "../../services/api";
+import logo from "../../assets/logo.svg";
 
 export default function Register() {
   const history = useHistory();
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [whatsapp, setWhatsapp] = useState('');
-  const [city, setCity] = useState('');
-  const [uf, setUf] = useState('');
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [whatsapp, setWhatsapp] = useState("");
+  const [city, setCity] = useState("");
+  const [uf, setUf] = useState("");
 
   async function handleRegister(e) {
     e.preventDefault();
@@ -38,25 +38,25 @@ export default function Register() {
     };
 
     try {
-      const response = await api.post('/ongs', data);
+      const response = await api.post("/ongs", data);
 
       await Swal.fire({
         title: `Anote o seu ID de acesso: ${response.data}`,
-        icon: 'success',
-        confirmButtonColor: '#e02041',
-        confirmButtonText: 'Anotado!',
+        icon: "success",
+        confirmButtonColor: "#e02041",
+        confirmButtonText: "Anotado!",
       }).then(async (result) => {
         if (result.value) {
-          history.push('/');
+          history.push("/");
         }
       });
     } catch (error) {
       Swal.fire({
         title: `Ocorreu um erro no cadastro.`,
-        text: 'Verifique os dados e tente novamente.',
-        icon: 'error',
-        confirmButtonColor: '#e02041',
-        confirmButtonText: 'Ok!',
+        text: "Verifique os dados e tente novamente.",
+        icon: "error",
+        confirmButtonColor: "#e02041",
+        confirmButtonText: "Ok!",
       });
     }
   }
