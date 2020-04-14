@@ -7,11 +7,11 @@ export const Container = styled.div`
   margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
 
     .heroes {
       display: none;
@@ -19,14 +19,14 @@ export const Container = styled.div`
 
     img {
       width: 350px;
-      margin: 0 auto;
+      margin-top: 20px;
     }
   }
 
   @media (max-width: 450px) {
     img {
       width: 230px;
-      margin: 0 auto;
+      margin: 40% auto 25%;
     }
   }
 `;
@@ -36,19 +36,18 @@ export const SectionForm = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 350px;
-  margin: 30px;
+  margin: 40px;
 
   @media (max-width: 1024px) {
     max-width: 60vw;
   }
   @media (max-width: 450px) {
     max-width: 80vw;
+    height: 100vh;
   }
 `;
 
 export const Form = styled.form`
-  margin-top: 100px;
-
   h1 {
     font-size: 32px;
     margin-bottom: 32px;
@@ -86,6 +85,7 @@ export const Form = styled.form`
 
   @media (max-width: 450px) {
     max-width: 80vw;
+    margin-top: 10px;
 
     a {
       font-size: 20px;

@@ -90,6 +90,7 @@ export const NewCaseButton = styled.button`
     }
   }
 
+
   @media (max-width: 450px) {
     width: 100px;
     height: 40px;

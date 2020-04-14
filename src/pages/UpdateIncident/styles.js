@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   width: 100%;
@@ -9,6 +9,15 @@ export const Container = styled.div`
   h1 {
     margin-top: 36px;
     margin-bottom: 15px;
+  }
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 450px) {
+    padding: 0 12px;
+    margin: 0 auto;
   }
 `;
 
@@ -22,6 +31,17 @@ export const Content = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 80px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding: 0 10px;
+  }
+
+  @media (max-width: 450px) {
+    background: none;
+    box-shadow: none;
+    padding: 16px;
+  }
 `;
 
 export const Section = styled.section`
@@ -51,13 +71,68 @@ export const Section = styled.section`
       opacity: 0.7;
     }
   }
+  @media (max-width: 1024px) {
+    h1 {
+      margin: 44px 0 32px;
+      font-size: 28px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #737380;
+      line-height: 26px;
+    }
+
+    a {
+      font-size: 22px;
+      margin-top: 20px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    h1 {
+      margin: 40px 0 22px;
+      font-size: 24px;
+      color: #41414d;
+    }
+
+    p {
+      font-size: 16px;
+      color: #737380;
+      line-height: 40px;
+    }
+
+    a {
+      font-size: 18px;
+      position: absolute;
+      top: 90%;
+      left: 10%;
+    }
+
+    img {
+      margin-bottom: 10px;
+      margin-left: 16px;
+    }
+  }
 `;
 export const Form = styled.form`
   width: 100%;
   max-width: 450px;
+  @media (max-width: 1024px) {
+    margin-top: 18px;
+  }
+
+  @media (max-width: 450px) {
+    margin-top: 30px;
+    width: 85vw;
+  }
 `;
 export const Input = styled.input`
   margin-top: 8px;
+  @media (max-width: 1024px) {
+    height: 50px;
+    font-size: 16px;
+  }
 `;
 
 export const TextArea = styled.textarea`
@@ -82,5 +157,12 @@ export const Button = styled.button`
 
   &:hover {
     filter: brightness(90%);
+  }
+  @media (max-width: 450px) {
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    font-size: 19px;
+    font-weight: 600;
   }
 `;

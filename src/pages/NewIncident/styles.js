@@ -16,7 +16,7 @@ export const Content = styled.div`
   box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
   @media (max-width: 1024px) {
@@ -35,6 +35,7 @@ export const Content = styled.div`
 export const Section = styled.section`
   width: 100%;
   max-width: 380px;
+  height: 100%;
 
   h1 {
     margin: 64px 0 32px;
@@ -63,13 +64,14 @@ export const Section = styled.section`
   @media (max-width: 1024px) {
     h1 {
       margin: 44px 0 32px;
-      font-size: 28px;
+      font-size: 26px;
+      text-transform: uppercase;
+      text-align: center;
+      width: 100%;
     }
 
     p {
-      font-size: 16px;
-      color: #737380;
-      line-height: 26px;
+      display: none;
     }
 
     a {
@@ -79,8 +81,10 @@ export const Section = styled.section`
   }
 
   @media (max-width: 450px) {
+    width: 90vw;
+    height: 35%;
     h1 {
-      margin: 24px 0 22px;
+      margin-top: 10px;
       font-size: 24px;
       color: #41414d;
     }
@@ -93,7 +97,13 @@ export const Section = styled.section`
 
     a {
       font-size: 18px;
-      margin-top: 20px;
+      position: absolute;
+      top: 90%;
+      left: 10%;
+    }
+
+    img {
+      margin: 30px;
     }
   }
 `;

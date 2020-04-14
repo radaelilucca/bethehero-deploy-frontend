@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useHistory, useParams } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
@@ -19,6 +19,7 @@ import logo from "../../assets/logo.png";
 import api from "../../services/api";
 
 export default function UpdateIncident() {
+  const [incident, setIncident] = useState({});
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [amount, setAmount] = useState();
@@ -28,6 +29,15 @@ export default function UpdateIncident() {
   const ongId = localStorage.getItem("id");
 
   const { id } = useParams();
+
+  async function getIncident() {
+    const response = await api.get(`/incident/${id}`, {
+      headers: {
+        auth: ongId,
+      },
+    });
+    return setIncident(response.data);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -50,6 +60,10 @@ export default function UpdateIncident() {
       toast.error("Falha ao atualizar o caso. Tente novamente. 😢");
     }
   }
+
+  useEffect(() => {
+    getIncident();
+  }, []);
 
   return (
     <Container>
@@ -75,17 +89,23 @@ export default function UpdateIncident() {
         </Section>
         <Form onSubmit={handleSubmit}>
           <Input
-            placeholder="Título do Caso"
+            placeholder={"Título: " + incident.title}
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
           <TextArea
-            placeholder="Descrição do Caso"
+            placeholder={"Descrição: " + incident.description}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
           />
           <Input
-            placeholder="Valor em Reais"
+            placeholder={
+              "Valor em reais: " +
+              Intl.NumberFormat("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+              }).format(incident.amount)
+            }
             value={amount}
             onChange={(e) => setAmount(e.target.value)}
           />

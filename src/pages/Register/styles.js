@@ -30,6 +30,8 @@ export const Content = styled.div`
 
   @media (max-width: 450px) {
     flex-direction: column;
+    background: none;
+    box-shadow: none;
   }
 `;
 
@@ -94,23 +96,24 @@ export const Section = styled.section`
     h1 {
       margin: 26px 0;
       font-size: 22px;
+      text-align: center;
+      text-transform: uppercase;
     }
 
     p {
-      font-size: 16px;
-      color: #737380;
-      line-height: 20px;
+      display: none;
     }
 
     a {
       font-size: 18px;
       margin: 10px 0;
       font-weight: 200;
+      order: 2;
     }
 
     img {
       margin: 10px auto;
-      width: 240px;
+      width: 270px;
     }
   }
 `;
@@ -159,6 +162,7 @@ export const Form = styled.form`
 
   @media (max-width: 450px) {
     max-width: 80vw;
+    margin-top: 30px;
 
     input {
       height: 46px;
@@ -182,6 +186,7 @@ export const Select = styled.select`
     height: 46px;
     font-size: 18px;
     border-radius: 10px;
+    margin-bottom: 20px;
   }
 `;
 export const InputGroup = styled.div`
@@ -214,5 +219,6 @@ export const Button = styled.button`
     height: 46px;
     font-size: 18px;
     line-height: 0px;
+    marign-top: 22px;
   }
 `;
