@@ -73,6 +73,7 @@ export default function IncidentsList() {
             // eslint-disable-next-line no-shadow
           }).then(async (result) => {
             if (result.value) {
+              setIncidents(incidents.filter((incident) => incident.id !== id));
               if (totalPage === page) {
                 if (page !== 1) {
                   setPage(page - 1);
