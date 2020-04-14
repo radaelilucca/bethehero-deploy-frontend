@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
+import Swal from "sweetalert2";
 
 import { FiPower } from "react-icons/fi";
 import { Container, Button, NewCaseButton } from "./styles";
@@ -12,8 +13,22 @@ export default function Header() {
 
   // eslint-disable-next-line no-unused-vars
   async function handleLogout(e) {
-    localStorage.clear();
-    history.push("/");
+    await Swal.fire({
+      title: "Fazer Logout",
+      text: `Você tem certeza que quer sair da aplicação?`,
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonColor: "#e02041",
+      confirmButtonColor: "#444",
+      reverseButtons: true,
+      confirmButtonText: "Sim",
+      cancelButtonText: "Cancelar",
+    }).then(async (result) => {
+      if (result.value) {
+        localStorage.clear();
+        history.push("/");
+      }
+    });
   }
 
   return (

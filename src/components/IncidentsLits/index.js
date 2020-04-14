@@ -37,7 +37,7 @@ export default function IncidentsList() {
     setTotalPage(Math.floor(Math.ceil(response.data.count / 4)));
     setTimeout(() => {
       setLoading(false);
-    }, 20000);
+    }, 1000);
   }
 
   useEffect(() => {
