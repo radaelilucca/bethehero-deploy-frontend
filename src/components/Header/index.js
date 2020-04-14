@@ -1,19 +1,19 @@
-import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import React from "react";
+import { Link, useHistory } from "react-router-dom";
 
-import { FiPower } from 'react-icons/fi';
-import { Container, Button, NewCaseButton } from './styles';
+import { FiPower } from "react-icons/fi";
+import { Container, Button, NewCaseButton } from "./styles";
 
-import logo from '../../assets/logo.svg';
+import logo from "../../assets/logo.svg";
 
 export default function Header() {
   const history = useHistory();
-  const ongName = localStorage.getItem('ongName');
+  const ongName = localStorage.getItem("ongName");
 
   // eslint-disable-next-line no-unused-vars
   async function handleLogout(e) {
     localStorage.clear();
-    history.push('/');
+    history.push("/");
   }
 
   return (
@@ -30,7 +30,7 @@ export default function Header() {
       </NewCaseButton>
 
       <Button type="button" onClick={handleLogout}>
-        <FiPower size={48} color="#fff" />
+        <FiPower size={24} color="#fff" />
       </Button>
     </Container>
   );

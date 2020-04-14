@@ -1,7 +1,7 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
-  width: 100%;
+  width: 90vw;
   max-width: 1180px;
   padding: 30px;
   margin: 5px auto;
@@ -10,44 +10,17 @@ export const Container = styled.div`
     margin-top: 36px;
     margin-bottom: 15px;
   }
-`;
 
-export const Header = styled.div`
-  display: flex;
-  align-items: center;
+  @media (max-width: 450px) {
+    padding: 10px;
+    margin: 5px auto;
 
-  span {
-    font-size: 20px;
-    margin-left: 24px;
-  }
-
-  img {
-    height: 64px;
-  }
-
-  a {
-    width: 260px;
-    margin-left: auto;
-    margin-top: 0;
-    height: 60px;
-    background: #e02041;
-    border: 0;
-    border-radius: 8px;
-    color: #fff;
-    font-weight: bold;
-    display: inline-block;
-    text-align: center;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 60px;
-    transition: filter 0.2s;
-    margin-right: 16px;
-
-    &:hover {
-      filter: brightness(90%);
+    h1 {
+      margin-left: 10px;
     }
   }
 `;
+
 export const Button = styled.button`
   height: 60px;
   width: 60px;
@@ -77,5 +50,10 @@ export const PageController = styled.div`
 
   Button {
     background: #e02041;
+  }
+
+  @media (max-width: 450px) {
+    padding: 26px;
+    width: 100vw;
   }
 `;

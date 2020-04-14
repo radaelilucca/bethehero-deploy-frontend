@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
@@ -10,6 +10,10 @@ export const Container = styled.div`
   h1 {
     font-size: 26px;
     color: #41414d;
+
+    @media (max-width: 450px) {
+      font-size: 20px;
+    }
   }
 `;
 
@@ -23,6 +27,21 @@ export const IncidentsContainer = styled.div`
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 22px;
     list-style: none;
+
+    @media (max-width: 1024px) {
+      grid-template-columns: 1fr;
+      grid-gap: 18px;
+    }
+
+    @media (max-width: 750px) {
+      padding: 20px;
+      width: 90vw;
+    }
+    @media (max-width: 450px) {
+      width: 100%;
+      marign: 0;
+      grid-gap: 16px;
+    }
   }
 `;
 

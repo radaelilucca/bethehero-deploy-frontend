@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  margin: 0 10px;
+  margin: 0 auto;
 
   span {
     font-size: 20px;
@@ -15,6 +15,22 @@ export const Container = styled.div`
   }
 
   a {
+  }
+  @media (max-width: 750px) {
+    margin-top: 5px;
+
+    justify-content: center;
+
+    span {
+      display: none;
+    }
+  }
+
+  @media (max-width: 450px) {
+    img {
+      height: 42px;
+      margin-right: 60px;
+    }
   }
 `;
 
@@ -29,6 +45,12 @@ export const Button = styled.button`
 
   &:hover {
     border-color: #999;
+  }
+
+  @media (max-width: 450px) {
+    height: 42px;
+    width: 42px;
+    margin-left: 20px;
   }
 `;
 
@@ -57,5 +79,25 @@ export const NewCaseButton = styled.button`
     font-size: 20px;
     line-height: 60px;
     opacity: 0.9;
+  }
+
+  @media (max-width: 525px) {
+    width: 100px;
+    margin-left: 30px;
+
+    a {
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 450px) {
+    width: 100px;
+    height: 40px;
+    margin: 0;
+
+    a {
+      font-size: 16px;
+      line-height: 0px;
+    }
   }
 `;

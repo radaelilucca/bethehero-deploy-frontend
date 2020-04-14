@@ -37,11 +37,12 @@ export default function IncidentsList() {
     setTotalPage(Math.floor(Math.ceil(response.data.count / 4)));
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 1);
   }
 
   useEffect(() => {
     loadIncidents();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [page]);
 
   async function handleDeleteIncident(id, title) {
