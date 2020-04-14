@@ -14,7 +14,7 @@ import {
 } from "./styles";
 
 import api from "../../services/api";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 
 export default function NewIncident() {
   const [title, setTitle] = useState("");

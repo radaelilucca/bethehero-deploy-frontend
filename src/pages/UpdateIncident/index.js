@@ -14,7 +14,7 @@ import {
   Button,
 } from "./styles";
 
-import logo from "./logo2.svg";
+import logo from "../../assets/logo.png";
 
 import api from "../../services/api";
 

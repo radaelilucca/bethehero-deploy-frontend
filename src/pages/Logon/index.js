@@ -64,7 +64,7 @@ export default function Logon() {
           </Link>
         </Form>
       </SectionForm>
-      <img src={heroesImg} alt="heroes" />
+      <img src={heroesImg} alt="heroes" className="heroes" />
     </Container>
   );
 }
