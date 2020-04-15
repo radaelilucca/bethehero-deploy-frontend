@@ -36,7 +36,7 @@ export const SectionForm = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 350px;
-  margin: 40px;
+  margin: 80px;
 
   @media (max-width: 1024px) {
     max-width: 60vw;
@@ -49,8 +49,9 @@ export const SectionForm = styled.div`
 
 export const Form = styled.form`
   h1 {
-    font-size: 32px;
+    font-size: 30px;
     margin-bottom: 32px;
+    margin-top: 62px;
     color: #41414d;
   }
 
