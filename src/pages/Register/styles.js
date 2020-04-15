@@ -175,9 +175,11 @@ export const Form = styled.form`
     }
   }
 `;
+
 export const Input = styled.input`
   margin-top: 8px;
 `;
+
 export const Select = styled.select`
   margin-top: 8px;
   border-radius: 15px;
@@ -189,12 +191,14 @@ export const Select = styled.select`
     margin-bottom: 20px;
   }
 `;
+
 export const InputGroup = styled.div`
   display: flex;
   input + input {
     margin-left: 18px;
   }
 `;
+
 export const Button = styled.button`
   width: 100%;
   height: 60px;

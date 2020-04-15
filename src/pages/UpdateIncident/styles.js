@@ -34,7 +34,7 @@ export const Content = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    padding: 0 10px;
+    padding: 36px;
   }
 
   @media (max-width: 450px) {
@@ -72,55 +72,43 @@ export const Section = styled.section`
     }
   }
   @media (max-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
     h1 {
-      margin: 44px 0 32px;
       font-size: 28px;
+      margin: 10px auto;
     }
 
     p {
-      font-size: 16px;
-      color: #737380;
-      line-height: 26px;
+      display: none;
     }
 
     a {
-      font-size: 22px;
-      margin-top: 20px;
+      display: none;
+    }
+
+    img {
+      margin: 10px auto;
     }
   }
 
   @media (max-width: 450px) {
     h1 {
-      margin: 40px 0 22px;
       font-size: 24px;
       color: #41414d;
     }
 
-    p {
-      font-size: 16px;
-      color: #737380;
-      line-height: 40px;
-    }
-
-    a {
-      font-size: 18px;
-      position: absolute;
-      top: 90%;
-      left: 10%;
-    }
-
     img {
-      margin-bottom: 10px;
-      margin-left: 16px;
+      margin-bottom: 20px;
     }
   }
 `;
 export const Form = styled.form`
   width: 100%;
   max-width: 450px;
-  @media (max-width: 1024px) {
-    margin-top: 18px;
-  }
 
   @media (max-width: 450px) {
     margin-top: 30px;
@@ -140,7 +128,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const Button = styled.button`
-  width: 100%;
+  width: 60%;
   height: 60px;
   background: #e02041;
   border: 0;
@@ -165,4 +153,36 @@ export const Button = styled.button`
     font-size: 19px;
     font-weight: 600;
   }
+`;
+
+export const CancelButton = styled.button`
+  width: 35%;
+  height: 60px;
+  background: #41414d;
+  border: 0;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+  @media (max-width: 450px) {
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+`;
+export const ButtonsGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;

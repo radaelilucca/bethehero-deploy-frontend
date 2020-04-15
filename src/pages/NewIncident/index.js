@@ -3,15 +3,9 @@ import { Link, useHistory } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FiArrowLeft } from "react-icons/fi";
 
-import {
-  Container,
-  Content,
-  Section,
-  Form,
-  Input,
-  TextArea,
-  Button,
-} from "./styles";
+import { Container, Content, Section, Form, Input, TextArea } from "./styles";
+
+import FormButtonsGroup from "../../components/FormButtonsGroup";
 
 import api from "../../services/api";
 import logo from "../../assets/logo.png";
@@ -103,8 +97,7 @@ export default function NewIncident() {
             required
             minLength={1}
           />
-
-          <Button type="submit">Cadastrar</Button>
+          <FormButtonsGroup />
         </Form>
       </Content>
     </Container>

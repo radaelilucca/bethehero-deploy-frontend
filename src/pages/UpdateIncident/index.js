@@ -4,18 +4,11 @@ import { FiArrowLeft } from "react-icons/fi";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {
-  Container,
-  Content,
-  Section,
-  Form,
-  Input,
-  TextArea,
-  Button,
-} from "./styles";
+import { Container, Content, Section, Form, Input, TextArea } from "./styles";
+
+import FormButtonsGroup from "../../components/FormButtonsGroup";
 
 import logo from "../../assets/logo.png";
-
 import api from "../../services/api";
 
 export default function UpdateIncident() {
@@ -110,7 +103,7 @@ export default function UpdateIncident() {
             onChange={(e) => setAmount(e.target.value)}
           />
 
-          <Button type="submit">Salvar alterações</Button>
+          <FormButtonsGroup />
         </Form>
       </Content>
     </Container>

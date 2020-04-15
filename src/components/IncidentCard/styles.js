@@ -6,10 +6,10 @@ export const Container = styled.div`
     padding: 24px;
     border-radius: 8px;
     position: relative;
+    height: 260px;
 
     @media (max-width: 1024px) {
       padding: 20px;
-      height: 260px;
     }
 
     @media (max-width: 750px) {
@@ -45,7 +45,7 @@ export const CaseProperty = styled.p`
 
 export const PropertyValue = styled.span`
   color: #737380;
-  line-height: 38px;
+  line-height: 22px;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -63,7 +63,7 @@ export const PropertyValue = styled.span`
 export const EditButton = styled.button`
   position: absolute;
   right: 24px;
-  top: 230px;
+  top: 216px;
   border: 0;
 
   &:hover {

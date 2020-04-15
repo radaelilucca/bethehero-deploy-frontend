@@ -62,12 +62,17 @@ export const Section = styled.section`
   }
 
   @media (max-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     h1 {
-      margin: 44px 0 32px;
       font-size: 26px;
       text-transform: uppercase;
       text-align: center;
       width: 100%;
+      margin-top: 20px;
     }
 
     p {
@@ -75,8 +80,7 @@ export const Section = styled.section`
     }
 
     a {
-      font-size: 22px;
-      margin-top: 20px;
+      display: none;
     }
   }
 
@@ -111,10 +115,6 @@ export const Form = styled.form`
   width: 100%;
   max-width: 450px;
 
-  @media (max-width: 1024px) {
-    margin-top: 18px;
-  }
-
   @media (max-width: 450px) {
     width: 85vw;
   }
@@ -133,7 +133,7 @@ export const TextArea = styled.textarea`
 `;
 
 export const Button = styled.button`
-  width: 100%;
+  width: 60%;
   height: 60px;
   background: #e02041;
   border: 0;
@@ -159,4 +159,35 @@ export const Button = styled.button`
     font-size: 19px;
     font-weight: 600;
   }
+`;
+export const CancelButton = styled.button`
+  width: 35%;
+  height: 60px;
+  background: #41414d;
+  border: 0;
+  border-radius: 15px;
+  color: #fff;
+  font-weight: bold;
+  margin-top: 16px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(90%);
+  }
+  @media (max-width: 450px) {
+    height: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    font-size: 19px;
+    font-weight: 600;
+  }
+`;
+export const ButtonsGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
