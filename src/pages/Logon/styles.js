@@ -11,7 +11,7 @@ export const Container = styled.div`
 
   @media (max-width: 1024px) {
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
 
     .heroes {
       display: none;
@@ -24,10 +24,7 @@ export const Container = styled.div`
   }
 
   @media (max-width: 450px) {
-    img {
-      width: 230px;
-      margin: 40% auto 25%;
-    }
+    align-items: center;
   }
 `;
 
@@ -43,7 +40,12 @@ export const SectionForm = styled.div`
   }
   @media (max-width: 450px) {
     max-width: 80vw;
-    height: 100vh;
+    margin-top: 40%;
+    height: 50vh;
+    magin: auto;
+
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 
