@@ -16,7 +16,7 @@ export default function FormButtonsGroup() {
       >
         Cancelar
       </CancelButton>
-      <Button type="submit">Cadastrar</Button>
+      <Button type="submit">Confirmar</Button>
     </Container>
   );
 }
